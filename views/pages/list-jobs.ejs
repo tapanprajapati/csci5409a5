@@ -1,0 +1,40 @@
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Jobs List</li>
+    </ol>
+  </nav>
+
+<div class="table-responsive">
+    <table class="table mt-5">
+        <thead class="thead-dark">
+          <tr>
+            <th>JobName820</th>
+            <th>PartId820</th>
+            <th>Quantity</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+            <% jobs.forEach(function(job) { %>
+                <tr>
+                    <td><%= job.jobName820 %></td>
+                    <td><%= job.partId820 %></td>
+                    <td><%= job.qty %></td>
+                    <td>
+                        <form class="form" method="get" action="/jobs820/edit820/<%= job.jobName820 %>/<%= job.partId820 %>">
+                            <button type="submit" class="btn btn-primary">Edit</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form class="form" method="get" action="/jobs820/delete820/<%= job.jobName820 %>/<%= job.partId820 %>">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+      </table>
+</div>

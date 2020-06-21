@@ -1,0 +1,60 @@
+<!--
+This is your default homepage.
+For more information, see:
+• https://sailsjs.com/documentation/concepts/views
+• https://sailsjs.com/documentation/concepts/routes
+-->
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+<script type="text/javascript">
+</script>
+
+<style>
+
+    .details
+    {
+        width: 70%;
+        margin: auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom: 40px;
+    }
+    .details .title
+    {
+        font-size: 1.4rem;
+        padding: 5px 5px 5px 10px; 
+        background-color: black;
+        color: white;
+        margin: 0;
+    }
+
+    .details .info{
+        margin: 10px;;
+
+    }
+</style>
+
+<div class="container">
+    <h1 align="center" class="mb-5">Welcome To My Web Service</h1>
+
+    <div class="details card">
+        <p class="title">Description</p>
+        <p class="info">
+            This web service provides interface to manage jobs. You can create jobs, update them and delete any jobs.
+            The structure of a job is defined below.
+        </p>
+    </div>
+
+    <div class="details card">
+        <p class="title">Job Structure</p>
+        <div class="info">
+            <dl>
+                <dt>Job Name</dt>
+                <dd>Title of the job. This field should be an alpha numeric value.</dd>
+                <dt>Part Id</dt>
+                <dd>ID of the part required to complete the job. It must be a number.</dd>
+                <dt>Quantity</dt>
+                <dd>Number of parts required to complete the job. This field also must be a number.</dd>
+            </dl>    
+        </p>
+    </div>
+</div>
+

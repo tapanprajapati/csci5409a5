@@ -1,0 +1,29 @@
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/jobs820/getJobs820">Jobs List</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit Job</li>
+  </ol>
+</nav>
+
+<div class="display-4 mb-5 text-center">Edit Job</div>
+
+<div class="container">
+  <form class="form col-md-4" style="margin: auto;" action="/jobs820/update820" method="POST">
+    <div class="form-group">
+        <label for="jobName820">JobName820:</label>
+        <input type="text" class="form-control" value="<%= job.jobName820 %>" placeholder="Enter Job Name" name="jobName820" readonly>
+      </div>
+      <div class="form-group">
+        <label for="partId820">PartId820:</label>
+        <input type="number" class="form-control" value="<%= job.partId820 %>" placeholder="Enter Part ID" name="partId820" readonly>
+      </div>
+      <div class="form-group">
+        <label for="qty">Quantity820:</label>
+        <input type="number" class="form-control" value="<%= job.qty %>" placeholder="Enter Quantity" name="qty" required>
+      </div>
+      <button type="submit" style="width: 49%;" class="btn btn-primary">Update</button>
+      <a class="btn btn-danger" style="width: 49%;" href="/jobs820/getJobs820">Cancel</a>
+</form>
+</div>

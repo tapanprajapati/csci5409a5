@@ -1,0 +1,35 @@
+
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Add Job</li>
+  </ol>
+</nav>
+
+<div class="display-4 mb-5 text-center">Add Job</div>
+
+<div class="container">
+  <form class="form col-md-4" style="margin: auto;" action="/jobs820/add820" method="POST">
+    <div class="form-group">
+        <label for="jobName820">JobName820:</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          pattern=".*\d+.*\s*" 
+          placeholder="Enter Job Name" 
+          title="Job Name Must Be Alpha Numberic"
+          name="jobName820" 
+          required>
+      </div>
+      <div class="form-group">
+        <label for="partId820">PartId820:</label>
+        <input type="number" class="form-control" placeholder="Enter Part ID" name="partId820" required>
+      </div>
+      <div class="form-group">
+        <label for="qty">Quantity820:</label>
+        <input type="number" class="form-control" placeholder="Enter Quantity" name="qty" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+</form>
+</div>
