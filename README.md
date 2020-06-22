@@ -1,26 +1,24 @@
-# assignment-5
+# Assignment-5 CSCI5409
 
-a [Sails v1](https://sailsjs.com) application
+Author: [Tapan Prajapati (B00851820)](Tapan.Prajapati@dal.ca)
 
+[Link to Web Service](http://5409assignment5-env.eba-vg6mumjy.us-east-1.elasticbeanstalk.com/)
 
-### Links
-
-+ [Sails framework documentation](https://sailsjs.com/get-started)
-+ [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-+ [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-+ [Community support options](https://sailsjs.com/support)
-+ [Professional / enterprise options](https://sailsjs.com/enterprise)
+Updated on: 21 JUN 2020
 
 
-### Version info
+## Description
 
-This app was originally generated on Fri Jun 19 2020 12:30:45 GMT-0300 (Atlantic Daylight Time) using Sails v1.2.4.
+This web application is created using [Sails.js](https://sailsjs.com/) and hosted on AWS Elastic Beanstalk. EB Fetches the Docker Image from the DockerHub which is connected with this repository to configure Continuous Integration. The database used to store job information is Microsoft Azure Myql.
 
-<!-- Internally, Sails used [`sails-generate@1.17.2`](https://github.com/balderdashy/sails-generate/tree/v1.17.2/lib/core-generators/new). -->
+> More information is provided on homepage of web application.
 
+### References
 
-
-<!--
-Note:  Generators are usually run using the globally-installed `sails` CLI (command-line interface).  This CLI version is _environment-specific_ rather than app-specific, thus over time, as a project's dependencies are upgraded or the project is worked on by different developers on different computers using different versions of Node.js, the Sails dependency in its package.json file may differ from the globally-installed Sails CLI release it was originally generated with.  (Be sure to always check out the relevant [upgrading guides](https://sailsjs.com/upgrading) before upgrading the version of Sails used by your app.  If you're stuck, [get help here](https://sailsjs.com/support).)
--->
-
+1. [Sails Js](https://sailsjs.com/)
+2. [AWS Elastic Beanstalk](https://awseducate.com/)
+3. [Microsoft Azure](https://azure.microsoft.com/en-ca/)
+4. [Docker Hub](https://hub.docker.com/)
+5. [Bootstrap](https://getbootstrap.com/)
+6. [Node JS](https://nodejs.org/en/)
+7. [Microsoft Visual Studio](https://visualstudio.microsoft.com/)

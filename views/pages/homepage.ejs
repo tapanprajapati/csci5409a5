@@ -10,12 +10,24 @@ For more information, see:
 
 <style>
 
+    p{
+        margin: 0;
+    }
+
+    .details-container
+    {
+        /* display: grid;
+        grid-template-columns: repeat(2, minmax(300px,auto));
+        grid-gap: 10px; */
+    }
+
     .details
     {
-        width: 70%;
-        margin: auto;
+        width: auto;
+        /* margin: auto; */
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         margin-bottom: 40px;
+        padding-bottom: 5px;
     }
     .details .title
     {
@@ -27,34 +39,121 @@ For more information, see:
     }
 
     .details .info{
-        margin: 10px;;
+        margin: 10px;
+        font-weight: normal;
 
+    }
+
+    .details .warn
+    {
+        font-style: italic;
+        color: red;
+    }
+
+    .sub-title
+    {
+        font-weight: bold;
     }
 </style>
 
 <div class="container">
-    <h1 align="center" class="mb-5">Welcome To My Web Service</h1>
+    <h1 align="center" class="mb-3">Welcome To My Web Service</h1>
 
-    <div class="details card">
-        <p class="title">Description</p>
-        <p class="info">
-            This web service provides interface to manage jobs. You can create jobs, update them and delete any jobs.
-            The structure of a job is defined below.
-        </p>
+    <div class="details-container">
+        <div class="details shadow-card">
+            <p class="title">Description</p>
+            <p class="info">
+                This web application is created by <strong>Tapan Prajapati (B00851820)</strong> as the work of Assignment-5 of CSCI5409. 
+                It is created using Sails.js and provides interface to manage jobs. You can create jobs, update them and delete any jobs.
+                The structure of a job is defined below.
+                All the data are stored in MySql database hosted on 
+                <a href="https://azure.microsoft.com/en-ca/">Microsoft Azure</a>
+                . 
+                The web service is hosted on 
+                <a href="https://awseducate.com/">AWS Elastic Beanstalk</a> and it pulls Docker Image from 
+                <a href="https://hub.docker.com/">DockerHub</a>. DockerHub is connected with
+                my <a href="https://github.com/Warrior24598/csci5409a5">GitHub Account</a> to configure Continuous Intergration.
+                
+            </p>
+        </div>
+    
+        <div class="details shadow-card">
+            <p class="title">Job Structure</p>
+            <div class="info">
+                <dl>
+                    <dt>Job Name</dt>
+                    <dd>Title of the job. This field should be an alpha numeric value.</dd>
+                    <dt>Part Id</dt>
+                    <dd>ID of the part required to complete the job. It must be a number.</dd>
+                    <dt>Quantity</dt>
+                    <dd>Number of parts required to complete the job. This field also must be a number.</dd>
+                </dl>
+                <p class="warn">Note: The combination of <strong>Job Name</strong> and <strong>Part Id</strong> must be unique.</p>    
+            </div>
+        </div>
+    
+        <div class="details shadow-card">
+            <p class="title">Functions</p>
+            <div class="info">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="sub-title">List of Jobs (GET Request)</p>
+                        <div class="info">
+                            <p>
+                                Click on <code>Jobs</code> in the navigation bar. This will take you to the list of
+                                jobs. There are two buttons available for each job. One to Edit the job and another to
+                                Delete the job.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="card-body">
+                        <p class="sub-title">Add a New Job (POST Request)</p>
+                        <div class="info">
+                            <p>
+                                Click on <code>Add Job</code> in the navigation bar. It will redirect to new page that contains
+                                a form with three fields. <code>Job Name</code>, <code>Part Id</code>, and <code>Quantity</code>.
+                                Job Name and Part Id must be unique and all three forms are required.
+                            </p>
+                            <p>
+                                Clicking on <code>Add</code> will add the job in the database and redirect you to job list page.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="card-body">
+                        <p class="sub-title">Edit a Job (PUT Request)</p>
+                        <div class="info">
+                            <p>
+                                Click on <code>Jobs</code> in the navigation bar. It will display list of 
+                                jobs in the database. There is an <code>Edit</code> button for each job.
+                                Clicking on the button will open a new page that contains the form similar 
+                                to adding a job. <code>Job Name</code> and <code>Part Id</code> are not allowed to change
+                                as they represent uniqueness of a job. Clicking on updaet button will take back to 
+                                list of jobs where you can see the changes reflected.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="card-body">
+                        <p class="sub-title">Delete a Job (GET Request)</p>
+                        <div class="info">
+                            <p>
+                                Along with <code>Edit</code> button, there is <code>Delete</code> button for each 
+                                job. Clicking on that button will delete job.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="details card">
-        <p class="title">Job Structure</p>
-        <div class="info">
-            <dl>
-                <dt>Job Name</dt>
-                <dd>Title of the job. This field should be an alpha numeric value.</dd>
-                <dt>Part Id</dt>
-                <dd>ID of the part required to complete the job. It must be a number.</dd>
-                <dt>Quantity</dt>
-                <dd>Number of parts required to complete the job. This field also must be a number.</dd>
-            </dl>    
-        </p>
-    </div>
 </div>
 

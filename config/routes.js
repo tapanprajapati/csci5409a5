@@ -25,7 +25,7 @@ module.exports.routes = {
   'GET /jobs820/getJobs820': Jobs820Controller.getJobs820,
   'GET /jobs820/delete820/:jobName820/:partId820': Jobs820Controller.deleteJob820,
   'GET /jobs820/edit820/:jobName820/:partId820': Jobs820Controller.editJob820,
-  'POST /jobs820/update820': Jobs820Controller.updateJob820,
+  'GET /jobs820/update820': Jobs820Controller.updateJob820,
   '/jobs820/createJob820': {view: 'pages/add-job'},
   'POST /jobs820/add820': Jobs820Controller.addJob820,
 

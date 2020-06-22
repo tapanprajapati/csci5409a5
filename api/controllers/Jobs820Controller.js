@@ -52,6 +52,7 @@ module.exports = {
         {
             if(error)
             {
+                
                 res.send({
                     code: '500',
                     message: error
@@ -66,9 +67,9 @@ module.exports = {
 
     updateJob820(req,res)
     {
-        jobName820 = req.body.jobName820;
-        partId820 = parseInt(req.body.partId820);
-        qty = parseInt(req.body.qty);
+        jobName820 = req.query.jobName820;
+        partId820 = parseInt(req.query.partId820);
+        qty = parseInt(req.query.qty);
 
 
         Jobs820.update({jobName820: jobName820,partId820: partId820},{jobName820: jobName820,partId820: partId820,qty:qty}).exec((error) =>
@@ -83,6 +84,7 @@ module.exports = {
             // res.send(jobs)
             res.redirect('/jobs820/getJobs820')
         })
+
     },
 
     addJob820(req,res)
@@ -92,14 +94,24 @@ module.exports = {
         qty = req.body.qty;
 
 
-        Jobs820.create({jobName820: jobName820,partId820:partId820,qty,qty}).exec((error) =>
+        Jobs820.create({jobName820: jobName820,partId820:partId820,qty:qty}).exec((error) =>
         {
+            
             if(error)
             {
-                res.send({
-                    code: '500',
-                    message: error
-                })
+                if(error.code==='E_UNIQUE')
+                {
+                    // console.debug("Data Exists")
+                    // alert("Job Already Exists")
+                    res.view('500',{error: error.message})
+                }
+                else
+                {
+                    res.send({
+                        code: '500',
+                        message: error
+                    })
+                }
             }
             // res.send(jobs)
             res.redirect('/jobs820/getJobs820')
