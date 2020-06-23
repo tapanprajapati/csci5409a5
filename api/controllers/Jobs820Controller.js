@@ -18,7 +18,6 @@ module.exports = {
                     message: error
                 })
             }
-            // res.send(jobs)
             res.view('pages/list-jobs',{jobs:jobs})
         })
     },
@@ -53,7 +52,6 @@ module.exports = {
                     message: error
                 })
             }
-            // res.send(jobs)
             res.view('pages/edit-job',{job:job})
         })
 
@@ -76,7 +74,6 @@ module.exports = {
                     message: error
                 })
             }
-            // res.send(jobs)
             res.redirect('/jobs820/getJobs820')
         })
 
@@ -93,27 +90,20 @@ module.exports = {
         {
             if(error)
             {
-                console.debug("error adding job")
                 if(error.code==='E_UNIQUE')
                 {
                     res.view('pages/job-exists',{job:req.body})
                 }
                 else
                 {
-                    console.debug("loading error page")
                     res.send({
                         code: '500',
                         message: error
                     })
                 }
             }
-            console.debug('listing jobs')
             res.redirect('/jobs820/getJobs820')
         })
-
-        console.debug("no page loaded")
-
-
 
         return false;
     },
