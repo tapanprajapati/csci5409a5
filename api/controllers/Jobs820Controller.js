@@ -93,21 +93,25 @@ module.exports = {
         {
             if(error)
             {
+                console.debug("error adding job")
                 if(error.code==='E_UNIQUE')
                 {
-                    console.debug(j)
                     res.view('pages/job-exists',{job:req.body})
                 }
                 else
                 {
+                    console.debug("loading error page")
                     res.send({
                         code: '500',
                         message: error
                     })
                 }
             }
+            console.debug('listing jobs')
             res.redirect('/jobs820/getJobs820')
         })
+
+        console.debug("no page loaded")
 
 
 
