@@ -1,0 +1,57 @@
+<style>
+    .dark
+    {
+        background-color: black;
+        color: white;
+    }
+
+    td{
+        padding: 15px;
+    }
+
+    table
+    {
+        margin: 10px;
+        border: 1px solid black;
+    }
+</style>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active"><a href="/jobs820/createJob820">Add Job</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Job Exists</li>
+    </ol>
+  </nav>
+  
+  <div class="display-4 mb-5 text-center">Job Already Exists</div>
+
+  <div class="container table-responsive">
+
+    <div style="width: max-content; margin: 0 auto;">
+        <table class="">
+            <tr>
+                <td class="dark">Job Name: </td>
+                <td><%= job.jobName820 %></td>
+            </tr>
+            <tr>
+                <td class="dark">Part Id: </td>
+                <td><%= job.partId820 %></td>
+            </tr>
+            <tr>
+                <td class="dark">Quantity: </td>
+                <td><%= job.qty %></td>
+            </tr>
+        </table>
+  
+        <button class="btn btn-primary text-center" onclick="goback();">Go Back</button>
+        <a class="btn btn-success text-center" style="float: right;" href="/jobs820/getJobs820">Show List</a>
+    </div>
+  </div>
+
+  <script>
+      function goback()
+      {
+          window.history.back();
+      }
+  </script>

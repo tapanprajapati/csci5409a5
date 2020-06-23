@@ -23,11 +23,6 @@ module.exports = {
         })
     },
 
-    getJob820(req,res)
-    {
-
-    },
-
     deleteJob820(req,res)
     {
         jobName820 = req.params.jobName820;
@@ -96,14 +91,23 @@ module.exports = {
 
         Jobs820.create({jobName820: jobName820,partId820:partId820,qty:qty}).exec((error) =>
         {
-            
             if(error)
             {
                 if(error.code==='E_UNIQUE')
                 {
-                    // console.debug("Data Exists")
-                    // alert("Job Already Exists")
-                    res.view('500',{error: error.message})
+                    Jobs820.findOne({jobName820: jobName820,partId820:partId820}).exec((e, j) =>
+                    {
+                        if(e)
+                        {
+                            
+                            res.send({
+                                code: '500',
+                                message: e
+                            })
+                        }
+                        console.debug(j)
+                        res.view('pages/job-exists',{job:j})
+                    })
                 }
                 else
                 {
@@ -113,8 +117,10 @@ module.exports = {
                     })
                 }
             }
-            // res.send(jobs)
-            res.redirect('/jobs820/getJobs820')
+            else
+            {
+                res.redirect('/jobs820/getJobs820')
+            }
         })
 
         return false;
