@@ -95,19 +95,8 @@ module.exports = {
             {
                 if(error.code==='E_UNIQUE')
                 {
-                    Jobs820.findOne({jobName820: jobName820,partId820:partId820}).exec((e, j) =>
-                    {
-                        if(e)
-                        {
-                            
-                            res.send({
-                                code: '500',
-                                message: e
-                            })
-                        }
-                        console.debug(j)
-                        res.view('pages/job-exists',{job:j})
-                    })
+                    console.debug(j)
+                    res.view('pages/job-exists',{job:req.body})
                 }
                 else
                 {
@@ -117,11 +106,10 @@ module.exports = {
                     })
                 }
             }
-            else
-            {
-                res.redirect('/jobs820/getJobs820')
-            }
+            res.redirect('/jobs820/getJobs820')
         })
+
+
 
         return false;
     },
